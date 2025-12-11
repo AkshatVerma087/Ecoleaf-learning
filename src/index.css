@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 80 30% 97%;
+    --foreground: 150 20% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 150 20% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 150 20% 15%;
+
+    --primary: 145 45% 35%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 145 30% 92%;
+    --secondary-foreground: 145 45% 25%;
+
+    --muted: 80 20% 94%;
+    --muted-foreground: 150 10% 45%;
+
+    --accent: 145 40% 88%;
+    --accent-foreground: 145 45% 25%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 145 20% 88%;
+    --input: 145 20% 88%;
+    --ring: 145 45% 35%;
+
+    --radius: 0.75rem;
+
+    /* Custom eco theme colors */
+    --eco-green: 145 45% 35%;
+    --eco-green-light: 145 40% 88%;
+    --eco-green-dark: 145 50% 20%;
+    --eco-mint: 160 35% 90%;
+    --eco-sage: 135 25% 75%;
+    --eco-cream: 45 30% 96%;
+    --eco-forest: 150 35% 25%;
+    --eco-leaf: 120 40% 45%;
+
+    /* Gradients */
+    --gradient-eco: linear-gradient(135deg, hsl(145 40% 88%) 0%, hsl(80 30% 97%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(145 20% 98%) 100%);
+    --gradient-sidebar: linear-gradient(180deg, hsl(145 30% 95%) 0%, hsl(145 25% 92%) 100%);
+
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -4px hsl(145 20% 50% / 0.15);
+    --shadow-card: 0 2px 12px -2px hsl(145 20% 50% / 0.1);
+    --shadow-hover: 0 8px 30px -8px hsl(145 20% 50% / 0.2);
+
+    --sidebar-background: 145 30% 95%;
+    --sidebar-foreground: 150 20% 25%;
+    --sidebar-primary: 145 45% 35%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 145 45% 35%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 145 20% 88%;
+    --sidebar-ring: 145 45% 35%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Nunito', sans-serif;
+  }
+}
+
+@layer utilities {
+  .eco-gradient {
+    background: var(--gradient-eco);
+  }
+  
+  .card-gradient {
+    background: var(--gradient-card);
+  }
+  
+  .sidebar-gradient {
+    background: var(--gradient-sidebar);
+  }
+  
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+  
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+  
+  .shadow-hover {
+    box-shadow: var(--shadow-hover);
+  }
+}
