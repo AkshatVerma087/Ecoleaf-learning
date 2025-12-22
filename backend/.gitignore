@@ -3,9 +3,3 @@ node_modules/
 uploads/
 *.log
 .DS_Store
-
-seedCourses.js
-seedData.js
-seedQuizes.js
-seedAdmin.js
-backend/utils/seed*.js

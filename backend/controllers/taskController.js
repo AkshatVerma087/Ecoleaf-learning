@@ -3,16 +3,12 @@ import TaskCompletion from '../models/TaskCompletion.js';
 import User from '../models/User.js';
 import { calculateLevelProgress } from '../utils/calculateXP.js';
 import { updateUserStreak } from '../utils/updateStreak.js';
-import { seedTasks } from '../utils/seedTasks.js';
 
 // @desc    Get all daily tasks
 // @route   GET /api/tasks
 // @access  Private
 export const getTasks = async (req, res) => {
   try {
-    // Ensure tasks are seeded
-    await seedTasks();
-    
     const tasks = await Task.find({ active: true }).sort({ createdAt: 1 });
     
     // Get today's date (start of day)

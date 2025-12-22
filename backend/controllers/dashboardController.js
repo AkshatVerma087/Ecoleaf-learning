@@ -3,7 +3,6 @@ import Task from '../models/Task.js';
 import TaskCompletion from '../models/TaskCompletion.js';
 import QuizResult from '../models/QuizResult.js';
 import { calculateLevelProgress } from '../utils/calculateXP.js';
-import { seedTasks } from '../utils/seedTasks.js';
 
 // @desc    Get dashboard stats
 // @route   GET /api/dashboard/stats
@@ -12,10 +11,7 @@ export const getDashboardStats = async (req, res) => {
   try {
     const user = await User.findById(req.user._id);
     const levelData = calculateLevelProgress(user.totalXp);
-    
-    // Ensure tasks are seeded
-    await seedTasks();
-    
+
     // Get total active tasks
     const totalTasks = await Task.countDocuments({ active: true });
     
